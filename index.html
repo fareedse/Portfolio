@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Muhammad Fareed Web Developer | UI Expert </title>
+    <meta name="description" content="I’m Muhammad Fareed, a passionate UI Expert and Web Developer dedicated to crafting visually stunning and highly functional digital experiences.">
+    <meta property="og:title" content="M.Fareed Portfolio ">
+    <meta property="og:description" content="I’m Muhammad Fareed, a passionate UI Expert and Web Developer dedicated to crafting visually stunning and highly functional digital experiences.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="president.png">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aurora-green': '#00ffaa',
+                        'aurora-blue': '#00aaff',
+                        'aurora-purple': '#aa00ff',
+                        'aurora-pink': '#ff00aa',
+                        'dark-bg': '#0a0e1a',
+                        'dark-card': '#1a1f2e',
+                        'dark-border': '#2a2f3e'
+                    },
+                    animation: {
+                        'aurora': 'aurora 15s ease-in-out infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        aurora: {
+                            '0%, 100%': {
+                                backgroundPosition: '0% 50%',
+                                backgroundSize: '200% 200%'
+                            },
+                            '50%': {
+                                backgroundPosition: '100% 50%',
+                                backgroundSize: '200% 200%'
+                            }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        glow: {
+                            '0%, 100%': {
+                                boxShadow: '0 0 5px rgba(0, 255, 170, 0.5), 0 0 20px rgba(0, 255, 170, 0.3)'
+                            },
+                            '50%': {
+                                boxShadow: '0 0 20px rgba(0, 170, 255, 0.8), 0 0 40px rgba(0, 170, 255, 0.4)'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Aurora gradient background */
+        .aurora-bg {
+            background: linear-gradient(-45deg, #0a0e1a, #1a0033, #002244, #001a33);
+            background-size: 400% 400%;
+            animation: aurora 15s ease infinite;
+        }
+
+        /* Aurora light effect overlay */
+        .aurora-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            background:
+                radial-gradient(ellipse at top left, rgba(0, 255, 170, 0.15) 0%, transparent 40%),
+                radial-gradient(ellipse at top right, rgba(0, 170, 255, 0.15) 0%, transparent 40%),
+                radial-gradient(ellipse at bottom left, rgba(170, 0, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(ellipse at bottom right, rgba(255, 0, 170, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0e1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #00ffaa, #00aaff);
+            border-radius: 5px;
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #00ffaa 0%, #00aaff 50%, #aa00ff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Card hover effect */
+        .card-hover {
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .card-hover:hover {
+            border-color: #00ffaa;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 170, 0.2);
+        }
+
+        /* Progress bar animation */
+        @keyframes progressAnimation {
+            0% { width: 0%; }
+        }
+
+        .progress-bar {
+            animation: progressAnimation 2s ease-out forwards;
+        }
+        @keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientMove 4s linear infinite;
+}
+
+    </style>
+</head>
+<body class="bg-dark-bg text-gray-200 aurora-bg" >
+    <!-- Aurora overlay effect -->
+    <div class="aurora-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-dark-bg/90 backdrop-blur-md border-b border-dark-border z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-text">FareedSE</div>
+                <ul class="hidden md:flex space-x-8">
+                   
+                    
+                    <li><a href="#experience" class="hover:text-aurora-green transition">Experience</a></li>
+                    <li><a href="#skills" class="hover:text-aurora-green transition">Skills</a></li>
+                    <li><a href="#services" class="hover:text-aurora-green transition">Services</a></li>
+                    <li><a href="#portfolio" class="hover:text-aurora-green transition">Portfolio</a></li>
+                    <li><a href="#testimonials" class="hover:text-aurora-green transition">Testimonials</a></li>
+                    <li><a href="#about" class="hover:text-aurora-green transition">About</a></li>
+                    <li><a href="#contact" class="hover:text-aurora-green transition">Contact</a></li>
+                </ul>
+                <!-- Mobile menu button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2">
+               
+                
+                <a href="#experience" class="block py-2 hover:text-aurora-green">Experience</a>
+                <a href="#skills" class="block py-2 hover:text-aurora-green">Skills</a>
+                <a href="#services" class="block py-2 hover:text-aurora-green">Services</a>
+                <a href="#portfolio" class="block py-2 hover:text-aurora-green">Portfolio</a>
+                <a href="#testimonials" class="block py-2 hover:text-aurora-green">Testimonials</a>
+                <a href="#about" class="block py-2 hover:text-aurora-green">About</a>
+                <a href="#contact" class="block py-2 hover:text-aurora-green">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+
+<section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-br from-[#050816] via-[#0b1229] to-[#020617]">
+
+    <!-- Gradient Glow Background -->
+    <div class="absolute inset-0">
+        <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-aurora-green/20 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-aurora-blue/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div class="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-aurora-purple/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-6 text-center relative z-10">
+        <div class="animate-fade-up backdrop-blur-md bg-white/5 border border-white/10 rounded-3xl p-10 md:p-14 shadow-2xl">
+
+            <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                Hello, I'm 
+                <span class="gradient-text animate-gradient">Muhammad Fareed</span>
+            </h2>
+
+            <p class="text-xl md:text-2xl text-gray-300 mb-6 tracking-wide">
+                Full-Stack Developer | UI/UX Designer | Tech Innovator
+            </p>
+
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12">
+                I am a passionate UI Expert and Web Developer dedicated to crafting visually stunning and highly functional digital experiences.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="#portfolio"
+                   class="px-10 py-4 rounded-full bg-gradient-to-r from-aurora-green to-aurora-blue text-dark-bg font-semibold 
+                   shadow-lg hover:shadow-aurora-green/40 transition-all duration-300 hover:scale-105">
+                    View My Work
+                </a>
+
+                <a href="https://pdflink.to/fareedse/"
+                   class="px-10 py-4 rounded-full border border-aurora-green text-white 
+                   hover:bg-aurora-green hover:text-dark-bg transition-all duration-300 hover:scale-105">
+                    Download CV
+                </a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="mt-12 flex justify-center space-x-8">
+                <a href="#" class="text-2xl text-gray-400 hover:text-aurora-green transition hover:scale-125">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="text-2xl text-gray-400 hover:text-aurora-blue transition hover:scale-125">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="text-2xl text-gray-400 hover:text-aurora-purple transition hover:scale-125">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-2xl text-gray-400 hover:text-aurora-pink transition hover:scale-125">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="absolute inset-0 pointer-events-none">
+        <span class="absolute w-2 h-2 bg-aurora-green rounded-full animate-float" style="top:15%;left:10%"></span>
+        <span class="absolute w-2 h-2 bg-aurora-blue rounded-full animate-float delay-1000" style="top:60%;left:85%"></span>
+        <span class="absolute w-2 h-2 bg-aurora-purple rounded-full animate-float delay-2000" style="top:35%;left:65%"></span>
+        <span class="absolute w-2 h-2 bg-aurora-pink rounded-full animate-float delay-3000" style="top:80%;left:30%"></span>
+    </div>
+
+</section>
+
+
+   
+
+    <section id="experience" class="relative py-28 overflow-hidden bg-gradient-to-b from-[#040812] via-[#060b1f] to-[#020617]">
+
+    <!-- Background Effects -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-aurora-purple/10 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-0 -left-40 w-[600px] h-[600px] bg-aurora-green/10 blur-[120px] rounded-full"></div>
+        <div class="absolute top-1/3 -right-40 w-[600px] h-[600px] bg-aurora-blue/10 blur-[120px] rounded-full"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+
+        <!-- Heading -->
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-20">
+            <span class="gradient-text animate-gradient">Work Experience</span>
+        </h2>
+
+        <div class="max-w-5xl mx-auto relative">
+
+            <!-- Timeline Beam -->
+            <span class="absolute left-4 top-0 h-full w-[2px] bg-gradient-to-b from-aurora-green via-aurora-blue to-aurora-purple opacity-60"></span>
+
+            <!-- Experience Item -->
+            <div class="group relative pl-16 pb-20">
+                <span class="absolute left-[6px] top-2 w-5 h-5 rounded-full bg-aurora-green shadow-[0_0_25px_rgba(0,255,163,0.7)] animate-pulse"></span>
+
+                <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 
+                            transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_80px_-20px_rgba(0,255,163,0.35)]">
+
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                        <h3 class="text-xl font-semibold text-aurora-green">
+                            Full-Stack Developer
+                        </h3>
+                        <span class="text-sm text-gray-400">
+                            2025 - Present
+                        </span>
+                    </div>
+
+                    <p class="text-gray-200 font-medium mb-3">
+                        Devcipetor
+                    </p>
+
+                    <p class="text-gray-400 leading-relaxed">
+                        Development of enterprise-scale web applications, and
+                        architect cloud-native solutions using modern tech stacks.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Experience Item -->
+            <div class="group relative pl-16 pb-20">
+                <span class="absolute left-[6px] top-2 w-5 h-5 rounded-full bg-aurora-blue shadow-[0_0_25px_rgba(0,163,255,0.7)] animate-pulse"></span>
+
+                <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 
+                            transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_80px_-20px_rgba(0,163,255,0.35)]">
+
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                        <h3 class="text-xl font-semibold text-aurora-blue">
+                            Full-Stack Bubble Developer
+                        </h3>
+                        <span class="text-sm text-gray-400">
+                            2024 - Present
+                        </span>
+                    </div>
+
+                    <p class="text-gray-200 font-medium mb-3">
+                        Digital Solutions Agency
+                    </p>
+
+                    <p class="text-gray-400 leading-relaxed">
+                        Developed custom web applications for various clients, implemented responsive designs,
+                        and optimized application performance.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Experience Item -->
+            <div class="group relative pl-16">
+                <span class="absolute left-[6px] top-2 w-5 h-5 rounded-full bg-aurora-purple shadow-[0_0_25px_rgba(167,139,250,0.7)] animate-pulse"></span>
+
+                <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 
+                            transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_80px_-20px_rgba(167,139,250,0.35)]">
+
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                        <h3 class="text-xl font-semibold text-aurora-purple">
+                            UI/UX Designer
+                        </h3>
+                        <span class="text-sm text-gray-400">
+                            2024 - 2025
+                        </span>
+                    </div>
+
+                    <p class="text-gray-200 font-medium mb-3">
+                        Creative Web Studio
+                    </p>
+
+                    <p class="text-gray-400 leading-relaxed">
+                        Created interactive user interfaces, implemented design mockups, and ensured
+                        cross-browser compatibility for client projects.
+                    </p>
+                </div>
+                
+            </div>
+          
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Technical Skills</h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Frontend Skills -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-aurora-green">Frontend Development</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fab fa-react text-2xl mb-2 text-aurora-green"></i>
+                            <p>React.js</p>
+                        </div>
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fa-brands fa-css3"></i>
+                            <p>CSS</p>
+                        </div>
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fab fa-java text-2xl mb-2 text-aurora-purple"></i>
+                            <p>JavaScript</p>
+                        </div>
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fa-brands fa-html5"></i>
+                            <p>HTML</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Skills -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-aurora-blue">Backend Development</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fab fa-node text-2xl mb-2 text-aurora-green"></i>
+                            <p>Node.js</p>
+                        </div>
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fab fa-js text-2xl mb-2 text-aurora-blue"></i>
+                            <p>Express.js</p>
+                        </div>
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fab fa-git text-2xl mb-2 text-aurora-purple"></i>
+                            <p>Mongo DB</p>
+                        </div>
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fa-brands fa-python"></i>
+                            <p>Python</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Others -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-aurora-purple">Tools & DevOps</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fab fa-docker text-2xl mb-2 text-aurora-green"></i>
+                            <p>Docker</p>
+                        </div>
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fab fa-aws text-2xl mb-2 text-aurora-blue"></i>
+                            <p>AWS</p>
+                        </div>
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fab fa-git text-2xl mb-2 text-aurora-purple"></i>
+                            <p>Git</p>
+                        </div>
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fas fa-infinity text-2xl mb-2 text-aurora-pink"></i>
+                            <p>CI/CD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-dark-card/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Services</h2>
+            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+                <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-2xl text-dark-bg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Web Development</h3>
+                    <p class="text-gray-400">
+                        Custom web applications built with modern frameworks and best practices for optimal performance.
+                    </p>
+                </div>
+
+                <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
+                        <i class="fas fa-mobile-alt text-2xl text-dark-bg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Mobile Development</h3>
+                    <p class="text-gray-400">
+                        Native and cross-platform mobile applications that deliver seamless user experiences.
+                    </p>
+                </div>
+
+                <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center">
+                        <i class="fas fa-palette text-2xl text-dark-bg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">UI/UX Design</h3>
+                    <p class="text-gray-400">
+                        Beautiful, intuitive interfaces designed with user experience at the forefront.
+                    </p>
+                </div>
+
+                <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-pink to-aurora-green flex items-center justify-center">
+                        <i class="fas fa-cloud text-2xl text-dark-bg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Cloud Solutions</h3>
+                    <p class="text-gray-400">
+                        Scalable cloud architecture and deployment strategies for modern applications.
+                    </p>
+                </div>
+
+                <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-purple flex items-center justify-center">
+                        <i class="fas fa-chart-line text-2xl text-dark-bg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Consulting</h3>
+                    <p class="text-gray-400">
+                        Technical consulting and strategic planning for digital transformation initiatives.
+                    </p>
+                </div>
+
+                <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-pink flex items-center justify-center">
+                        <i class="fas fa-cogs text-2xl text-dark-bg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">API Integration</h3>
+                    <p class="text-gray-400">
+                        Seamless third-party API integrations and custom API development.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Portfolio</h2>
+            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+                <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
+                    <div class="h-48 bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
+                  <img src="e.jpg" alt="E-Commerce">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-400 mb-4">Full-stack e-commerce solution with payment integration</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs">React</span>
+                            <span class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs">Node.js</span>
+                            <span class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs">MongoDB</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-aurora-green hover:text-aurora-blue transition">
+                                <i class="fas fa-external-link-alt"></i> Live
+                            </a>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
+                    <div class="h-48 bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
+                        <img src="servizo.png" alt="Servizo"  >
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Servizo (FIVER CLONE)</h3>
+                        <p class="text-gray-400 mb-4">Analytics dashboard for Gigs management (Bubble.io)</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs">Vue.js</span>
+                            <span class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs">Python</span>
+                            <span class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs">PostgreSQL</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-aurora-green hover:text-aurora-blue transition">
+                                <i class="fas fa-external-link-alt"></i> Live
+                            </a>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
+                    <div class="h-48 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center">
+                        <img src="image.png" alt="">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Image To Text (ML Project)</h3>
+                        <p class="text-gray-400 mb-4">Real-time Free platform</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs">Next.js</span>
+                            <span class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs">Socket.io</span>
+                            <span class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs">Redis</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-aurora-green hover:text-aurora-blue transition">
+                                <i class="fas fa-external-link-alt"></i> Live
+                            </a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-dark-card/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Client Testimonials</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="bg-dark-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center text-xl font-bold text-dark-bg">
+                           <img src="p1.png" alt="">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Alina</h4>
+                            <p class="text-sm text-gray-400">CEO, TechStart</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 italic">
+                        "Fareed delivered an exceptional product that exceeded our expectations. Their technical expertise
+                        and attention to detail made our project a huge success."
+                    </p>
+                    <div class="mt-4 text-aurora-green">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center text-xl font-bold text-dark-bg">
+                            <img src="p.png" alt="">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Sarah Miller</h4>
+                            <p class="text-sm text-gray-400">Product Manager, InnovateCo</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 italic">
+                        "Working with Fraeed was a fantastic experience. They brought our vision to life with
+                        creativity and technical excellence."
+                    </p>
+                    <div class="mt-4 text-aurora-blue">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+     <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">About Me</h2>
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-gray-400 leading-relaxed">
+                        With over 3 years of experience in web development and design, I specialize in creating
+                        immersive digital experiences that captivate users and drive business growth.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        My journey began with a fascination for the intersection of art and technology. Today,
+                        I work with cutting-edge technologies to build scalable, performant applications that
+                        push the boundaries of what's possible on the web.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
+                            <div class="text-3xl font-bold text-aurora-green">100+</div>
+                            <div class="text-sm text-gray-400">Projects Completed</div>
+                        </div>
+                        <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
+                            <div class="text-3xl font-bold text-aurora-blue">50+</div>
+                            <div class="text-sm text-gray-400">Happy Clients</div>
+                        </div>
+                        <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
+                            <div class="text-3xl font-bold text-aurora-purple">7+</div>
+                            <div class="text-sm text-gray-400">Years Experience</div>
+                        </div>
+                        <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
+                            <div class="text-3xl font-bold text-aurora-pink">15+</div>
+                            <div class="text-sm text-gray-400">Awards Won</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-aurora-green via-aurora-blue to-aurora-purple p-1">
+                        <div class="w-full h-full rounded-full bg-dark-bg flex items-center justify-center">
+                            <img src="pic.png" alt="M.Fareed" width="200" height="100" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark-card/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Get In Touch</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
+                                <i class="fas fa-envelope text-dark-bg"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Email</p>
+                                <p>muhammadfareedse@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
+                                <i class="fas fa-phone text-dark-bg"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Phone</p>
+                                <p>+92-3175368541</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-dark-bg"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Location</p>
+                                <p>Islamabad , Pak</p>
+                            </div>
+                        </div>
+                    </div>
+
+                   <form 
+  action="https://formspree.io/f/mdkqlngo"  method="POST" class="space-y-5">
+
+  <!-- Name -->
+  <input type="text" name="name" placeholder="Your Name" required
+    class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-lg 
+           focus:outline-none focus:border-aurora-green transition"
+  />
+
+  <!-- Email -->
+  <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-lg       focus:outline-none focus:border-aurora-green transition"
+  />
+
+  <!-- Message -->
+  <textarea name="message"  placeholder="Your Message"  rows="5"  required  class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-lg 
+           focus:outline-none focus:border-aurora-green transition resize-none"
+  ></textarea>
+
+  <!-- Optional Hidden Fields -->
+  <input type="hidden" name="_subject" value="New Contact Message from Portfolio" />
+  <input type="hidden" name="_template" value="table" />
+
+  <!-- Submit Button -->
+  <button
+    type="submit"
+    class="w-full px-8 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue 
+           rounded-lg text-dark-bg font-semibold
+           transition-all duration-300
+           hover:shadow-xl hover:shadow-aurora-green/40 hover:-translate-y-0.5"
+  >
+    Send Message
+  </button>
+
+</form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-dark-border">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-4">
+                <a href="#" class="text-2xl mx-2 hover:text-aurora-green transition"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-2xl mx-2 hover:text-aurora-blue transition"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-2xl mx-2 hover:text-aurora-purple transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-2xl mx-2 hover:text-aurora-pink transition"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="text-gray-400">
+                © 2026 Copyright
+                <a href="https://github.com/fansjjamil" class="text-aurora-green hover:text-aurora-blue transition">
+                    FareedSE
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
